@@ -21,10 +21,10 @@ const run = async () => {
   const { type } = await inquirer.askServiceTypeQuestion();
   const { name } = await inquirer.askServiceNameQuestion(type)
   const serviceText = makeServiceFromTemplate({ name, type });
-  fs.writeFileSync(
-    `${config.path}/${makeServiceFileName(name)}`,
-    serviceText
-  );
+  const serviceFileName = makeServiceFileName(name)
+  const servicePath = `${config.path}/${serviceFileName}`
+  fs.writeFileSync(servicePath, serviceText);
+  console.log(chalk.green(`Service ${serviceFileName} created at /c${servicePath}`));
 };
 
 run();
