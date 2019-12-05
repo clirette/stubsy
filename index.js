@@ -18,10 +18,11 @@ console.log(
 console.log(chalk.green("Quickly stub out services with the Stubsy CLI."));
 
 const run = async () => {
-  const credentials = await inquirer.askServiceQuestions();
-  const serviceText = makeServiceFromTemplate(credentials);
+  const { type } = await inquirer.askServiceTypeQuestion();
+  const { name } = await inquirer.askServiceNameQuestion(type)
+  const serviceText = makeServiceFromTemplate({ name, type });
   fs.writeFileSync(
-    `${config.path}/${makeServiceFileName(credentials.name)}`,
+    `${config.path}/${makeServiceFileName(name)}`,
     serviceText
   );
 };

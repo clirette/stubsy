@@ -1,3 +1,3 @@
 module.exports = {
-  path: "/path/to/service/dir"
+  path: "/Working/Employee_UI/app/service"
 };
