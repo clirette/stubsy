@@ -1,3 +1,4 @@
 module.exports = {
-  path: "/Working/Employee_UI/app/service"
+  servicePath: "/Working/Employee_UI/app/service",
+  reducerPath: "/Working/Employee_UI/app/reducers"
 };
