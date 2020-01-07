@@ -19,7 +19,7 @@ console.log(
   chalk.yellow(figlet.textSync("Stubsy", { horizontalLayout: "full" }))
 );
 
-console.log(chalk.green("Quickly stub out services with the Stubsy CLI."));
+console.log(chalk.green("Quickly stub out services and reducers with the Stubsy CLI."));
 
 const run = async () => {
   const { mock } = await inquirer.askReducerOrServiceQuestion();
